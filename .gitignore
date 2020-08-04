@@ -17,3 +17,4 @@ example.txt
 mtrace.log
 true_printf_main.c
 *.a
+./libft.a
