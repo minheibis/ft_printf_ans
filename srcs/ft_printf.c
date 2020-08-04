@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:26:41 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/04 20:38:49 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/04 20:39:40 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int		ft_printf(const char *format, ...)
 	ft_putstr_fd(t.output, 1);
 	va_end(t.ap);
 
-	muntrace();
 	return (t.rv);
 }
 
