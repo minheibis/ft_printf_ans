@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 08:38:38 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/04 21:48:35 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/04 21:49:53 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int		set_d_inside_minus(char *str_d, int d_len, int len, t_printf *p_t)
 			p_t->precision = d_len;
 		pad_letter(0, (len - p_t->precision - 1), ' ', p_t);
 		pad_letter((len - p_t->precision - 1), (len - p_t->precision),
-					 '-', p_t);
+					'-', p_t);
 		pad_letter((len - p_t->precision), (len - d_len), '0', p_t);
 		pad_str((len - d_len), str_d, p_t);
 	}
