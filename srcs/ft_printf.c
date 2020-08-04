@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:26:41 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/04 19:49:37 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/04 20:38:49 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 int		ft_printf(const char *format, ...)
 {
 	t_printf	t;
-
-	//trace
-	mtrace();
 
 	init_t_printf(&t);
 	va_start(t.ap, format);
@@ -29,10 +26,7 @@ int		ft_printf(const char *format, ...)
 	ft_putstr_fd(t.output, 1);
 	va_end(t.ap);
 
-	//trace
-	free_t_printf(&t, t.rv);
 	muntrace();
-
 	return (t.rv);
 }
 

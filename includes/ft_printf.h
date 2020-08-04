@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 10:39:50 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/04 19:49:16 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/04 20:38:27 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <limits.h>
-
-//後で消す
-# include <stdio.h>
-# include <mcheck.h>
 
 typedef struct	s_printf
 {
