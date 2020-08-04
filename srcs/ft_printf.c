@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:26:41 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/04 20:39:40 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/04 20:56:26 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,11 @@ int		set_tmp(t_printf *p_t)
 	else if (p_t->conversion == 'd' || p_t->conversion == 'i')
 		return (set_d(va_arg(p_t->ap, int), p_t));
 	else if (p_t->conversion == 'u')
-		return (set_uxX(va_arg(p_t->ap, unsigned int), 'u', p_t));
+		return (set_u(va_arg(p_t->ap, unsigned int), 'u', p_t));
 	else if (p_t->conversion == 'x')
-		return (set_uxX(va_arg(p_t->ap, unsigned int), 'x', p_t));
+		return (set_u(va_arg(p_t->ap, unsigned int), 'x', p_t));
 	else if (p_t->conversion == 'X')
-		return (set_uxX(va_arg(p_t->ap, unsigned int), 'X', p_t));
+		return (set_u(va_arg(p_t->ap, unsigned int), 'X', p_t));
 	else if (p_t->conversion == '%')
 		return (set_per(p_t));
 	else
