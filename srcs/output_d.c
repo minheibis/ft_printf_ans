@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 08:38:38 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/04 21:46:30 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/04 21:48:35 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int		set_d_inside_plus(char *str_d, int d_len, int len, t_printf *p_t)
 			p_t->precision = d_len;
 		pad_letter(0, (p_t->precision - d_len), '0', p_t);
 		pad_str((p_t->precision - d_len), str_d, p_t);
-		pad_letter(p_t->precision , len, ' ', p_t);
+		pad_letter(p_t->precision, len, ' ', p_t);
 	}
 	else
 	{
@@ -92,7 +92,7 @@ int		set_d_inside_minus(char *str_d, int d_len, int len, t_printf *p_t)
 		pad_letter(0, 1, '-', p_t);
 		pad_letter(1, (len - p_t->precision - 1 - d_len), '0', p_t);
 		pad_str((len - p_t->precision - 1 - d_len), str_d, p_t);
-		pad_letter((len - p_t->precision - 1) , len, ' ', p_t);
+		pad_letter((len - p_t->precision - 1), len, ' ', p_t);
 	}
 	else
 	{
@@ -101,7 +101,8 @@ int		set_d_inside_minus(char *str_d, int d_len, int len, t_printf *p_t)
 		else if (p_t->precision < d_len)
 			p_t->precision = d_len;
 		pad_letter(0, (len - p_t->precision - 1), ' ', p_t);
-		pad_letter((len - p_t->precision - 1), (len - p_t->precision), '-', p_t);
+		pad_letter((len - p_t->precision - 1), (len - p_t->precision),
+					 '-', p_t);
 		pad_letter((len - p_t->precision), (len - d_len), '0', p_t);
 		pad_str((len - d_len), str_d, p_t);
 	}

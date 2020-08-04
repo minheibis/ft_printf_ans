@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 21:56:49 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/03 21:56:53 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/04 21:48:57 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*utoa_base(size_t num, int base)
 	base_char = "0123456789abcdef";
 	len = a_base_len(num, base);
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
-	ans[len] = '\0';
+		ans[len] = '\0';
 	while (len-- >= 0)
 	{
 		ans[len] = base_char[num % base];
