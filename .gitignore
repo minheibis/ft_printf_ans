@@ -16,5 +16,5 @@ example.txt
 0pft_2019/
 mtrace.log
 true_printf_main.c
-*.a
+libftprintf.a
 ./libft.a
