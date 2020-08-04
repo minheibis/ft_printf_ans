@@ -6,7 +6,7 @@
 #    By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 22:00:55 by hyuki             #+#    #+#              #
-#    Updated: 2020/07/27 20:45:04 by hyuki            ###   ########.fr        #
+#    Updated: 2020/07/02 17:51:52 by hyuki            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,10 +26,10 @@ B_OBJS = $(B_SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	ar rc $(NAME) $(OBJS)
 
 bonus: $(B_OBJS)
-	ar rcs $(NAME) $(B_OBJS)
+	ar rc $(NAME) $(B_OBJS)
 
 clean:
 	/bin/rm -f $(B_OBJS)
@@ -43,5 +43,3 @@ re_bonus: fclean bonus
 
 so : bonus
 	${CC} ${CFLAGS} -shared ${B_OBJS} -o ${SONAME}
-
-.PHONY	: all bonus clean fclean re re_bonus so

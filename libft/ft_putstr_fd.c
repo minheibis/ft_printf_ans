@@ -6,13 +6,11 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/25 22:13:50 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/03 19:18:53 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/06/28 00:24:26 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//後で消す
-#include <stdio.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {

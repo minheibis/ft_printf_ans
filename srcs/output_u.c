@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   output_uxX.c                                       :+:      :+:    :+:   */
+/*   output_u.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 11:56:20 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/04 20:07:05 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/04 20:47:48 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		set_uxX(unsigned int u, char cs, t_printf *p_t)
+int		set_u(unsigned int u, char cs, t_printf *p_t)
 {
 	char	*str_u;
 	int		len;

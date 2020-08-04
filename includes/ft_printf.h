@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 10:39:50 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/04 20:38:27 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/04 20:48:29 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		set_tmp(t_printf *p_t);
 **parse.c
 */
 int		parse_flag(t_printf *p_t);
-int 	parse_flag_exception (t_printf *p_t);
+int		parse_flag_exception (t_printf *p_t);
 int		parse_field_width(t_printf *p_t);
 int		parse_precision(t_printf *p_t);
 int		parse_conversion(t_printf *p_t);
@@ -98,7 +98,7 @@ int		set_d_inside_minus(char *str_d, int d_len, int len, t_printf *p_t);
 /*
 **output_uxX.c
 */
-int		set_uxX(unsigned int u, char cs, t_printf *p_t);
+int		set_u(unsigned int u, char cs, t_printf *p_t);
 int		set_u_inside(char *str_u, int u_len, int len, t_printf *p_t);
 
 #endif
