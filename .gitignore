@@ -1,0 +1,18 @@
+#everytime
+*.gch
+.DS_Store
+
+main.c
+*main.c
+*.out
+*.log
+*.o
+srcs/*.o
+*.dSYMs
+*.so
+
+# this time only
+example.txt
+0pft_2019/
+mtrace.log
+true_printf_main.c
