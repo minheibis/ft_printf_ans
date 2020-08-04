@@ -13,10 +13,11 @@ srcs/*.o
 
 # this time only
 example.txt
-0pft_2019/
+0
+pft_2019/
 mtrace.log
 true_printf_main.c
 libftprintf.a
 ./libft.a
 libft/*.o
-srcs/*.o
+srcs/*.opft_2019/
