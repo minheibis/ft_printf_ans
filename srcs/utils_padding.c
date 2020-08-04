@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 21:57:17 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/03 22:38:14 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/04 21:42:12 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ int		pad_str(int start, char *str, t_printf *p_t)
 		start++;
 		i++;
 	}
-	return(0);
+	return (0);
 }

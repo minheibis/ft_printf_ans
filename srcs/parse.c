@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:26:57 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/03 22:04:05 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/04 21:43:25 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int		parse_flag(t_printf *p_t)
 			break ;
 		p_t->f_tmp++;
 	}
-	if (parse_flag_exception (p_t) == -1)
+	if (parse_flag_exception(p_t) == -1)
 		return (-1);
 	return (0);
 }
 
-int 	parse_flag_exception (t_printf *p_t)
+int		parse_flag_exception(t_printf *p_t)
 {
 	if (p_t->flag_align_left == 1)
 		p_t->flag_zero = 0;

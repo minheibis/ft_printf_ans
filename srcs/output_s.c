@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:32:42 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/03 21:55:01 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/04 21:42:28 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		set_s(char *s, t_printf *p_t)
 	int	s_len;
 
 	s_len = ft_strlen(s);
-	len = ((s_len > p_t->field) ? s_len: p_t->field);
+	len = ((s_len > p_t->field) ? s_len : p_t->field);
 	if (!(p_t->o_tmp = (char *)malloc(sizeof(char) * (len + 1))))
 		return (-1);
 	p_t->o_tmp[len] = '\0';

@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 21:59:06 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/04 19:49:26 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/04 21:41:07 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ char	*free_strjoin(char *str1, char *str2)
 	free(str2);
 	str1 = NULL;
 	str2 = NULL;
-	return(join);
+	return (join);
 }
