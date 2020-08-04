@@ -18,3 +18,4 @@ mtrace.log
 true_printf_main.c
 libftprintf.a
 ./libft.a
+libft/*.o
