@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 10:39:50 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/04 21:35:51 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/05 21:59:00 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char			*str_toupper(char *str);
 **utils_padding.c
 */
 int				pad_letter(int start, int end, char c, t_printf *p_t);
-int				pad_str(int start, char *str, t_printf *p_t);
+int				pad_str(int start, int end, char *str, t_printf *p_t);
 /*
 **utils_free.c
 */

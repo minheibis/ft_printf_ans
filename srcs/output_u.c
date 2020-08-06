@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 11:56:20 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/04 20:47:48 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/05 22:02:12 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		set_u_inside(char *str_u, int u_len, int len, t_printf *p_t)
 		if (p_t->precision < u_len)
 			p_t->precision = u_len;
 		pad_letter(0, (len - p_t->precision - u_len), '0', p_t);
-		pad_str((len - p_t->precision - u_len), str_u, p_t);
+		pad_str((len - p_t->precision - u_len), (len - p_t->precision), str_u, p_t);
 		pad_letter((len - p_t->precision), len, ' ', p_t);
 	}
 	else
@@ -54,7 +54,7 @@ int		set_u_inside(char *str_u, int u_len, int len, t_printf *p_t)
 			p_t->precision = u_len;
 		pad_letter(0, (len - p_t->precision), ' ', p_t);
 		pad_letter((len - p_t->precision), (len - u_len), '0', p_t);
-		pad_str((len - u_len), str_u, p_t);
+		pad_str((len - u_len), len, str_u, p_t);
 	}
 	return (0);
 }

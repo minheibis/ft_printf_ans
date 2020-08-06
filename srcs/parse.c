@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:26:57 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/04 21:43:25 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/05 21:48:01 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int		parse_field_width(t_printf *p_t)
 	}
 	else
 	{
+		if (ft_isdigit(*(p_t->f_tmp)) != 0)
+			p_t->field = 0;
 		while (ft_isdigit(*(p_t->f_tmp)) != 0)
 		{
 			p_t->field *= 10;

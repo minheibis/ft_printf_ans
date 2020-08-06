@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 22:13:11 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/04 21:44:22 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/06 16:50:54 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	init_t_printf(t_printf *p_t)
 	p_t->rv = 0;
 	p_t->flag_align_left = 0;
 	p_t->flag_zero = 0;
-	p_t->field = 0;
+	p_t->field = -1;
 	p_t->precision = -1;
 	p_t->conversion = '\0';
 }
@@ -30,7 +30,7 @@ void	init_flags(t_printf *p_t)
 {
 	p_t->flag_align_left = 0;
 	p_t->flag_zero = 0;
-	p_t->field = 0;
+	p_t->field = -1;
 	p_t->precision = -1;
 	p_t->conversion = '\0';
 }
