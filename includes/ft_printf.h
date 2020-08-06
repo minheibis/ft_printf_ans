@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 10:39:50 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/05 21:59:00 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/06 17:34:26 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ char			*str_toupper(char *str);
 */
 int				pad_letter(int start, int end, char c, t_printf *p_t);
 int				pad_str(int start, int end, char *str, t_printf *p_t);
+int				pad_u_c(int start, int end, unsigned char c, t_printf *p_t);
 /*
 **utils_free.c
 */
@@ -73,10 +74,13 @@ char			*free_strjoin(char *str1, char *str2);
 **output_c.c
 */
 int				set_c(unsigned char c, t_printf *p_t);
+int				set_len_c(t_printf *p_t);
+int				set_c_inside(unsigned char c, int len, t_printf *p_t);
 /*
 **output_s.c
 */
 int				set_s(char *s, t_printf *p_t);
+int				set_len_s(int s_len, t_printf *p_t);
 int				set_s_inside(char *s, int s_len, int len, t_printf *p_t);
 /*
 **output_per.c
