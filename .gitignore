@@ -18,6 +18,6 @@ pft_2019/
 mtrace.log
 true_printf_main.c
 libftprintf.a
-./libft.a
+libft/libft.a
 libft/*.o
 srcs/*.opft_2019/
