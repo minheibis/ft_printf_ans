@@ -6,13 +6,13 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 21:56:49 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/04 21:48:57 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/06 22:05:41 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		a_base_len(int num, int base)
+int		a_base_len(unsigned int num, int base)
 {
 	int	len;
 
@@ -25,7 +25,7 @@ int		a_base_len(int num, int base)
 	return (len);
 }
 
-char	*utoa_base(size_t num, int base)
+char	*utoa_base(unsigned int num, int base)
 {
 	char	*base_char;
 	char	*ans;
@@ -34,8 +34,9 @@ char	*utoa_base(size_t num, int base)
 	base_char = "0123456789abcdef";
 	len = a_base_len(num, base);
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
-		ans[len] = '\0';
-	while (len-- >= 0)
+		return (NULL);
+	ans[len] = '\0';
+	while (len-- > 0)
 	{
 		ans[len] = base_char[num % base];
 		num /= base;

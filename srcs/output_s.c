@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:32:42 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/06 16:53:59 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/06 19:16:55 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ int		set_s(char *s, t_printf *p_t)
 	int	len;
 	int	s_len;
 
+	if (s == NULL)
+	{
+		p_t->o_tmp = ft_strdup("");
+		return (0);
+	}
 	s_len = ft_strlen(s);
 	len = set_len_s(s_len, p_t);
 	if (!(p_t->o_tmp = (char *)malloc(sizeof(char) * (len + 1))))
@@ -29,13 +34,14 @@ int		set_s(char *s, t_printf *p_t)
 int		set_len_s(int s_len, t_printf *p_t)
 {
 	int	len;
+	int	word_len;
 
 	if (p_t->field == -1 && p_t->precision == -1)
 		len = s_len;
 	else if (p_t->field == -1 && p_t->precision != -1)
 		len = (s_len > p_t->precision ? p_t->precision : s_len);
 	else if (p_t->field != -1 && p_t->precision == -1)
-		len = p_t->field;
+		len = (s_len > p_t->field ? s_len : p_t->field);
 	else
 	{
 		if (p_t->field > s_len)
@@ -55,23 +61,27 @@ int		set_s_inside(char *s, int s_len, int len, t_printf *p_t)
 {
 	if (p_t->flag_align_left == 1)
 	{
-		if (p_t->precision < s_len)
+		if (p_t->precision == -1)
 			p_t->precision = s_len;
-		pad_letter(0, (p_t->precision - s_len), '0', p_t);
-		pad_str((p_t->precision - s_len), p_t->precision, s, p_t);
-		pad_letter(p_t->precision, len, ' ', p_t);
+		else if (p_t->precision > len)
+			p_t->precision = len;
+		pad_str(0, p_t->precision, s, p_t);
+		if (p_t->flag_zero == 1)
+			pad_letter(p_t->precision, len, '0', p_t);
+		else
+			pad_letter(p_t->precision, len, ' ', p_t);
 	}
 	else
 	{
-		if (p_t->flag_zero == 1 && p_t->precision == -1)
-			p_t->precision = p_t->field;
-		else if (len < s_len)
-			s_len = len;
-		else if (p_t->precision < s_len)
+		if (p_t->precision == -1)
 			p_t->precision = s_len;
-		pad_letter(0, (len - p_t->precision), ' ', p_t);
-		pad_letter((len - p_t->precision), (len - s_len), '0', p_t);
-		pad_str((len - s_len), len, s, p_t);
+		else if (p_t->precision > len)
+			p_t->precision = len;
+		if (p_t->flag_zero == 1)
+			pad_letter(0, (len - p_t->precision), '0', p_t);
+		else
+			pad_letter(0, (len - p_t->precision), ' ', p_t);
+		pad_str((len - p_t->precision), len, s, p_t);
 	}
 	return (0);
 }

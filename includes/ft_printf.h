@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 10:39:50 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/06 17:34:26 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/06 22:10:55 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void			init_flags(t_printf *p_t);
 /*
 **utils_toa.c
 */
-int				a_base_len(int num, int base);
-char			*utoa_base(size_t num, int base);
+int				a_base_len(unsigned int num, int base);
+char			*utoa_base(unsigned int num, int base);
 char			*str_toupper(char *str);
 /*
 **utils_padding.c
@@ -105,6 +105,7 @@ int				set_d_inside_minus(char *str_d, int d_len,
 **output_uxX.c
 */
 int				set_u(unsigned int u, char cs, t_printf *p_t);
+int				set_str_u(unsigned int u, char cs, char **str_u);
 int				set_u_inside(char *str_u, int u_len, int len, t_printf *p_t);
 
 #endif
