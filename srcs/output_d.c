@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 08:38:38 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/06 21:32:38 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/07 21:47:00 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,6 @@ int		set_d(int d, t_printf *p_t)
 	int		len;
 	int		d_len;
 
-	if (d == 0)
-	{
-		p_t->o_tmp = ft_strdup("");
-		return (0);
-	}
 	str_d = ft_itoa(d);
 	d_len = ft_strlen(str_d);
 	len = set_len_d(d, d_len, p_t);

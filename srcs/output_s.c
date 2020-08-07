@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:32:42 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/07 13:16:45 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/07 21:32:20 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 int		set_s(char *s, t_printf *p_t)
 {
-	int	len;
-	int	s_len;
+	int		len;
+	int		s_len;
+	char	c;
 
 	if (s == NULL)
 	{
-		p_t->o_tmp = ft_strdup("");
-		return (0);
+		s = &c;
+		s = ft_strdup("(null)");
 	}
 	s_len = ft_strlen(s);
 	len = set_len_s(s_len, p_t);
@@ -60,7 +61,7 @@ int		set_s_inside(char *s, int s_len, int len, t_printf *p_t)
 {
 	if (p_t->flag_align_left == 1)
 	{
-		if (p_t->precision == -1)
+		if (p_t->precision == -1 || p_t->precision > s_len)
 			p_t->precision = s_len;
 		else if (p_t->precision > len)
 			p_t->precision = len;
@@ -72,7 +73,7 @@ int		set_s_inside(char *s, int s_len, int len, t_printf *p_t)
 	}
 	else
 	{
-		if (p_t->precision == -1)
+		if (p_t->precision == -1 || p_t->precision > s_len)
 			p_t->precision = s_len;
 		else if (p_t->precision > len)
 			p_t->precision = len;
