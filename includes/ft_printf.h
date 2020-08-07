@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 10:39:50 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/06 22:10:55 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/07 23:00:55 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,8 @@ int				set_d_inside_minus(char *str_d, int d_len,
 **output_uxX.c
 */
 int				set_u(unsigned int u, char cs, t_printf *p_t);
-int				set_str_u(unsigned int u, char cs, char **str_u);
+int				set_str_u(unsigned int u, char cs, char **str_u, t_printf *p_t);
+int				set_len_u(unsigned int u, int u_len, t_printf *p_t);
 int				set_u_inside(char *str_u, int u_len, int len, t_printf *p_t);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 08:38:38 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/07 21:47:00 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/07 22:24:04 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int		set_d(int d, t_printf *p_t)
 	int		d_len;
 
 	str_d = ft_itoa(d);
+	if (d == 0 && p_t->precision == 0)
+		*str_d = ' ';
 	d_len = ft_strlen(str_d);
 	len = set_len_d(d, d_len, p_t);
 	if (!(p_t->o_tmp = (char *)malloc(sizeof(char) * (len + 1))))
