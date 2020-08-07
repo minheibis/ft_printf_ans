@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:32:42 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/06 19:16:55 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/07 13:16:45 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int		set_s(char *s, t_printf *p_t)
 int		set_len_s(int s_len, t_printf *p_t)
 {
 	int	len;
-	int	word_len;
 
 	if (p_t->field == -1 && p_t->precision == -1)
 		len = s_len;
