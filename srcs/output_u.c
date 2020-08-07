@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 11:56:20 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/07 23:00:34 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/07 23:02:22 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		set_u(unsigned int u, char cs, t_printf *p_t)
 	if (set_str_u(u, cs, &str_u, p_t) == -1)
 		return (-1);
 	u_len = ft_strlen(str_u);
-	len = set_len_u(u, u_len, p_t);
+	len = set_len_u(u_len, p_t);
 	if (!(p_t->o_tmp = (char *)malloc(sizeof(char) * (len + 1))))
 		return (-1);
 	p_t->o_tmp[len] = '\0';
@@ -49,7 +49,7 @@ int		set_str_u(unsigned int u, char cs, char **str_u, t_printf *p_t)
 	return (0);
 }
 
-int		set_len_u(unsigned int u, int u_len, t_printf *p_t)
+int		set_len_u(int u_len, t_printf *p_t)
 {
 	int	len;
 	int	num_len;
