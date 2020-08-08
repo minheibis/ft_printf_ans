@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 21:56:49 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/06 22:05:41 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 09:26:35 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		a_base_len(unsigned int num, int base)
 	return (len);
 }
 
-char	*utoa_base(unsigned int num, int base)
+char	*utoa_base_low(unsigned int num, int base)
 {
 	char	*base_char;
 	char	*ans;
@@ -44,12 +44,21 @@ char	*utoa_base(unsigned int num, int base)
 	return (ans);
 }
 
-char	*str_toupper(char *str)
+char	*utoa_base_up(unsigned int num, int base)
 {
-	while (*str != '\0')
+	char	*base_char;
+	char	*ans;
+	int		len;
+
+	base_char = "0123456789ABCDEF";
+	len = a_base_len(num, base);
+	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	ans[len] = '\0';
+	while (len-- > 0)
 	{
-		*str = ft_toupper(*str);
-		str++;
+		ans[len] = base_char[num % base];
+		num /= base;
 	}
-	return (str);
+	return (ans);
 }

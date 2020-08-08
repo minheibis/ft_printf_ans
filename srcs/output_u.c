@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 11:56:20 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/07 23:02:22 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 09:24:06 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,18 @@ int		set_str_u(unsigned int u, char cs, char **str_u, t_printf *p_t)
 		*str_u = ft_strdup(" ");
 	else if (cs == 'u')
 	{
-		if (!(*str_u = utoa_base(u, 10)))
+		if (!(*str_u = utoa_base_low(u, 10)))
+			return (-1);
+	}
+	else if (cs == 'x')
+	{
+		if (!(*str_u = utoa_base_low(u, 16)))
 			return (-1);
 	}
 	else
 	{
-		if (!(*str_u = utoa_base(u, 16)))
+		if (!(*str_u = utoa_base_up(u, 16)))
 			return (-1);
-		if (cs == 'X')
-			*str_u = str_toupper(*str_u);
 	}
 	return (0);
 }

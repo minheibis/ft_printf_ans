@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 10:39:50 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/07 23:02:18 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 09:24:41 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ void			init_flags(t_printf *p_t);
 **utils_toa.c
 */
 int				a_base_len(unsigned int num, int base);
-char			*utoa_base(unsigned int num, int base);
-char			*str_toupper(char *str);
+char			*utoa_base_low(unsigned int num, int base);
+char			*utoa_base_up(unsigned int num, int base);
 /*
 **utils_padding.c
 */
