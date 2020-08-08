@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:26:57 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/05 21:48:01 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 17:19:31 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,6 @@ int		parse_flag(t_printf *p_t)
 			break ;
 		p_t->f_tmp++;
 	}
-	if (parse_flag_exception(p_t) == -1)
-		return (-1);
-	return (0);
-}
-
-int		parse_flag_exception(t_printf *p_t)
-{
 	if (p_t->flag_align_left == 1)
 		p_t->flag_zero = 0;
 	return (0);
@@ -38,11 +31,9 @@ int		parse_flag_exception(t_printf *p_t)
 
 int		parse_field_width(t_printf *p_t)
 {
+
 	if (*(p_t->f_tmp) == '*')
-	{
-		p_t->field = va_arg(p_t->ap, int);
-		p_t->f_tmp++;
-	}
+		parse_field_width_asta(p_t);
 	else
 	{
 		if (ft_isdigit(*(p_t->f_tmp)) != 0)
@@ -56,6 +47,22 @@ int		parse_field_width(t_printf *p_t)
 				return (-1);
 		}
 	}
+	return (0);
+}
+
+int		parse_field_width_asta(t_printf *p_t)
+{
+	int	tmp;
+
+	tmp = va_arg(p_t->ap, int);
+	if (tmp >= 0)
+		p_t->field = tmp;
+	else
+	{
+		p_t->field = -tmp;
+		p_t->flag_align_left = 1;
+	}
+	p_t->f_tmp++;
 	return (0);
 }
 
