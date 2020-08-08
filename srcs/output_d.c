@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 08:38:38 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 11:15:45 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 14:23:02 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		set_d(int d, t_printf *p_t)
 	else
 		set_d_inside_minus(str_d, d_len, len, p_t);
 	free(str_d);
+	p_t->rv_tmp = len;
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:26:41 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 12:12:14 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 14:07:54 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,32 +25,34 @@ int		ft_printf(const char *format, ...)
 		return (-1);
 	if (read_format(&t) == -1)
 		return (free_t_printf(&t, -1));
-	ft_putstr_fd(t.output, 1);
+	write(1, t.output, t.rv);
 	va_end(t.ap);
 	return (free_t_printf(&t, t.rv));
 }
 
 int		read_format(t_printf *p_t)
 {
-	int	i;
-
 	while (*(p_t->f_tmp) != '\0')
 	{
-		i = 0;
-		init_flags(p_t);
-		while ((p_t->f_tmp)[i] != '%' && (p_t->f_tmp)[i] != '\0')
-			i++;
-		p_t->output = free_strjoin(p_t->output, ft_substr(p_t->f_tmp, 0, i));
-		if ((p_t->f_tmp)[i] == '\0')
+		p_t->rv_tmp = 0;
+		while ((p_t->f_tmp)[p_t->rv_tmp] != '%' && (p_t->f_tmp)[p_t->rv_tmp] != '\0')
+			p_t->rv_tmp++;
+		if (!(p_t->o_tmp = ft_substr(p_t->f_tmp, 0, p_t->rv_tmp)))
+			return(-1);
+		if (!(p_t->output = free_join_output(p_t)))
+			return (-1);
+		if ((p_t->f_tmp)[p_t->rv_tmp] == '\0')
 			break ;
-		p_t->f_tmp += (i + 1);
+		p_t->f_tmp += (p_t->rv_tmp + 1);
+		p_t->rv_tmp = 0;
+		init_flags(p_t);
 		if (parse_format(p_t) == -1)
 			return (-1);
 		if (set_tmp(p_t) == -1)
 			return (-1);
-		p_t->output = free_strjoin(p_t->output, p_t->o_tmp);
+		if (!(p_t->output = free_join_output(p_t)))
+			return (-1);
 	}
-	p_t->rv += ft_strlen(p_t->output);
 	return (0);
 }
 

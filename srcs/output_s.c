@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:32:42 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 11:04:20 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 14:22:53 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		set_s(char *s, t_printf *p_t)
 		return (-1);
 	p_t->o_tmp[len] = '\0';
 	set_s_inside(s, s_len, len, p_t);
+	p_t->rv_tmp = len;
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 11:56:20 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 11:16:27 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 14:22:47 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		set_u(unsigned int u, char cs, t_printf *p_t)
 	p_t->o_tmp[len] = '\0';
 	set_u_inside(str_u, u_len, len, p_t);
 	free(str_u);
+	p_t->rv_tmp = len;
 	return (0);
 }
 

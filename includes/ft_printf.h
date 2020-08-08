@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 10:39:50 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 12:02:27 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 14:26:46 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct	s_printf
 	char		*o_tmp;
 	va_list		ap;
 	int			rv;
+	int			rv_tmp;
 	int			flag_align_left;
 	int			flag_zero;
 	int			field;
@@ -70,11 +71,11 @@ int				pad_u_c(int start, int end, unsigned char c, t_printf *p_t);
 */
 int				free_t_printf(t_printf *p_t, int rv);
 char			*free_strjoin(char *str1, char *str2);
+char			*free_join_output(t_printf *p_t);
 /*
 **output_c.c
 */
 int				set_c(unsigned char c, t_printf *p_t);
-int				set_c_0(t_printf *p_t);
 int				set_len_c(t_printf *p_t);
 int				set_c_inside(unsigned char c, int len, t_printf *p_t);
 /*
