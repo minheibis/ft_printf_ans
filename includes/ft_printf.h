@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 10:39:50 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 17:17:55 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 17:26:07 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int				set_tmp(t_printf *p_t);
 **parse.c
 */
 int				parse_flag(t_printf *p_t);
+int				parse_asta(int flag, t_printf *p_t);
 int				parse_field_width(t_printf *p_t);
-int				parse_field_width_asta(t_printf *p_t);
 int				parse_precision(t_printf *p_t);
 int				parse_conversion(t_printf *p_t);
 /*
