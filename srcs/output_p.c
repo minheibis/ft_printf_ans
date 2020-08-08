@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:43:57 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 11:22:56 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 16:46:09 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		set_p(void *p, t_printf *p_t)
 	int		len;
 	int		p_len;
 
-	if (!(str_p = utoa_base_low((size_t)p, 16)))
+	if (!(str_p = utoa_base_low((long)p, 16)))
 		return (-1);
 	p_len = ft_strlen(str_p);
 	len = set_len_p(p_len, p_t);
@@ -27,6 +27,7 @@ int		set_p(void *p, t_printf *p_t)
 	p_t->o_tmp[len] = '\0';
 	set_p_inside(str_p, p_len, len, p_t);
 	free(str_p);
+	p_t->rv_tmp = len;
 	return (0);
 }
 

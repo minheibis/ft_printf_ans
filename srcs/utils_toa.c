@@ -6,13 +6,13 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 21:56:49 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 16:21:37 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 16:35:04 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		a_base_len(unsigned int num, unsigned int base)
+int		a_base_len(long num, long base)
 {
 	int	len;
 
@@ -25,7 +25,7 @@ int		a_base_len(unsigned int num, unsigned int base)
 	return (len);
 }
 
-char	*utoa_base_low(unsigned int num, unsigned int base)
+char	*utoa_base_low(long num, long base)
 {
 	char	*base_char;
 	char	*ans;
@@ -44,7 +44,7 @@ char	*utoa_base_low(unsigned int num, unsigned int base)
 	return (ans);
 }
 
-char	*utoa_base_up(unsigned int num, unsigned int base)
+char	*utoa_base_up(long num, long base)
 {
 	char	*base_char;
 	char	*ans;
