@@ -15,6 +15,7 @@ srcs/*.o
 example.txt
 0
 pft_2019/
+pft_2019
 mtrace.log
 true_printf_main.c
 libftprintf.a

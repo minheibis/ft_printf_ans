@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 21:56:49 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 09:26:35 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 10:50:54 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int		a_base_len(unsigned int num, int base)
 {
 	int	len;
 
-	len = 0;
-	while (num != 0)
+	len = 1;
+	while (num > 9)
 	{
 		num /= base;
 		len++;

@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 10:39:50 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 09:24:41 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 12:02:27 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ char			*free_strjoin(char *str1, char *str2);
 **output_c.c
 */
 int				set_c(unsigned char c, t_printf *p_t);
+int				set_c_0(t_printf *p_t);
 int				set_len_c(t_printf *p_t);
 int				set_c_inside(unsigned char c, int len, t_printf *p_t);
 /*
@@ -96,6 +97,7 @@ int				set_p_inside(char *str_p, int p_len, int len, t_printf *p_t);
 **output_d.c
 */
 int				set_d(int d, t_printf *p_t);
+int				set_str_d(int d, char **p_str_d, t_printf *p_t);
 int				set_len_d(int d, int d_len, t_printf *p_t);
 int				set_d_inside_plus(char *str_d, int d_len,
 									int len, t_printf *p_t);
@@ -105,7 +107,7 @@ int				set_d_inside_minus(char *str_d, int d_len,
 **output_uxX.c
 */
 int				set_u(unsigned int u, char cs, t_printf *p_t);
-int				set_str_u(unsigned int u, char cs, char **str_u, t_printf *p_t);
+int				set_str_u(unsigned int u, char cs, char **p_str_u, t_printf *p_t);
 int				set_len_u(int u_len, t_printf *p_t);
 int				set_u_inside(char *str_u, int u_len, int len, t_printf *p_t);
 

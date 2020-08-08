@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:43:57 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 09:27:38 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 11:22:56 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int		set_p(void *p, t_printf *p_t)
 	int		len;
 	int		p_len;
 
-	str_p = utoa_base_low((size_t)p, 16);
+	if (!(str_p = utoa_base_low((size_t)p, 16)))
+		return (-1);
 	p_len = ft_strlen(str_p);
 	len = set_len_p(p_len, p_t);
 	if (!(p_t->o_tmp = (char *)malloc(sizeof(char) * (len + 1))))

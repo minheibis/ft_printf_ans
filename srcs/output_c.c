@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:29:05 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/06 17:32:43 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 12:01:55 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,35 @@ int		set_c(unsigned char c, t_printf *p_t)
 {
 	int	len;
 
-	len = set_len_c(p_t);
+	if (c == '\0')
+	{
+		if (set_c_0(p_t) == -1)
+			return (-1);
+	}
+	else
+	{
+		len = set_len_c(p_t);
+		if (!(p_t->o_tmp = (char *)malloc(sizeof(char) * (len + 1))))
+			return (-1);
+		p_t->o_tmp[len] = '\0';
+		set_c_inside(c, len, p_t);
+	}
+	return (0);
+}
+
+int		set_c_0(t_printf *p_t)
+{
+	int	len;
+
+	if (p_t -> field == -1)
+		len = 0;
+	else
+		len = p_t->field - 1;
 	if (!(p_t->o_tmp = (char *)malloc(sizeof(char) * (len + 1))))
 		return (-1);
 	p_t->o_tmp[len] = '\0';
-	set_c_inside(c, len, p_t);
+	pad_letter(1, len, ' ', p_t);
+	p_t->rv += 1;
 	return (0);
 }
 

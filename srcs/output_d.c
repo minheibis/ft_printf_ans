@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 08:38:38 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/07 22:24:04 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 11:15:45 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ int		set_d(int d, t_printf *p_t)
 	int		len;
 	int		d_len;
 
-	str_d = ft_itoa(d);
-	if (d == 0 && p_t->precision == 0)
-		*str_d = ' ';
+	if (set_str_d(d, &str_d, p_t) == -1)
+		return (-1);
 	d_len = ft_strlen(str_d);
 	len = set_len_d(d, d_len, p_t);
 	if (!(p_t->o_tmp = (char *)malloc(sizeof(char) * (len + 1))))
@@ -33,6 +32,30 @@ int		set_d(int d, t_printf *p_t)
 	free(str_d);
 	return (0);
 }
+
+int		set_str_d(int d, char **p_str_d, t_printf *p_t)
+{
+	if (d == 0 && p_t->precision == 0)
+	{
+		if (p_t->field == -1)
+		{
+			if (!(*p_str_d = ft_strdup("")))
+				return (-1);
+		}
+		else
+		{
+			if (!(*p_str_d = ft_strdup(" ")))
+				return (-1);
+		}
+	}
+	else
+	{
+		if (!(*p_str_d = ft_itoa(d)))
+			return (-1);
+	}
+	return (0);
+}
+
 
 int		set_len_d(int d, int d_len, t_printf *p_t)
 {

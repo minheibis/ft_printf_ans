@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 11:56:20 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 09:24:06 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 11:16:27 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,23 +30,26 @@ int		set_u(unsigned int u, char cs, t_printf *p_t)
 	return (0);
 }
 
-int		set_str_u(unsigned int u, char cs, char **str_u, t_printf *p_t)
+int		set_str_u(unsigned int u, char cs, char **p_str_u, t_printf *p_t)
 {
 	if (u == 0 && p_t->precision == 0)
-		*str_u = ft_strdup(" ");
+	{
+		if (!(*p_str_u = ft_strdup("")))
+			return (-1);
+	}
 	else if (cs == 'u')
 	{
-		if (!(*str_u = utoa_base_low(u, 10)))
+		if (!(*p_str_u = utoa_base_low(u, 10)))
 			return (-1);
 	}
 	else if (cs == 'x')
 	{
-		if (!(*str_u = utoa_base_low(u, 16)))
+		if (!(*p_str_u = utoa_base_low(u, 16)))
 			return (-1);
 	}
 	else
 	{
-		if (!(*str_u = utoa_base_up(u, 16)))
+		if (!(*p_str_u = utoa_base_up(u, 16)))
 			return (-1);
 	}
 	return (0);

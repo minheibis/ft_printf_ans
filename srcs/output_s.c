@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:32:42 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/07 21:32:20 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/08 11:04:20 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int		set_s(char *s, t_printf *p_t)
 	if (s == NULL)
 	{
 		s = &c;
-		s = ft_strdup("(null)");
+		if (!(s = ft_strdup("(null)")))
+			return (-1);
 	}
 	s_len = ft_strlen(s);
 	len = set_len_s(s_len, p_t);
