@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 10:39:50 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 17:26:07 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/10 23:01:08 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ int				pad_u_c(int start, int end, unsigned char c, t_printf *p_t);
 **utils_free.c
 */
 int				free_t_printf(t_printf *p_t, int rv);
-char			*free_strjoin(char *str1, char *str2);
 char			*free_join_output(t_printf *p_t);
 /*
 **output_c.c

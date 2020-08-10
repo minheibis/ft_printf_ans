@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 21:59:06 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 14:18:01 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/10 23:00:51 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,6 @@ int		free_t_printf(t_printf *p_t, int rv)
 	p_t->format = NULL;
 	p_t->output = NULL;
 	return (rv);
-}
-
-char	*free_strjoin(char *str1, char *str2)
-{
-	char	*join;
-
-	join = ft_strjoin(str1, str2);
-	free(str1);
-	free(str2);
-	str1 = NULL;
-	str2 = NULL;
-	return (join);
 }
 
 char	*free_join_output(t_printf *p_t)
