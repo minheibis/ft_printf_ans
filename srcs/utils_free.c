@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 21:59:06 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 14:18:01 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/10 20:49:31 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ char	*free_join_output(t_printf *p_t)
 		return (NULL);
 	join[len] = '\0';
 	i = 0;
-	while(i < p_t->rv)
+	while (i < p_t->rv)
 	{
 		join[i] = p_t->output[i];
 		i++;
 	}
 	j = 0;
-	while(i < len)
+	while (i < len)
 		join[i++] = p_t->o_tmp[j++];
 	p_t->rv = len;
 	free(p_t->output);

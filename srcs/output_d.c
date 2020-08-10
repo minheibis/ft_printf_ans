@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 08:38:38 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 14:23:02 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/10 20:47:56 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ int		set_str_d(int d, char **p_str_d, t_printf *p_t)
 	}
 	return (0);
 }
-
 
 int		set_len_d(int d, int d_len, t_printf *p_t)
 {
