@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:26:57 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 17:30:48 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/10 20:54:11 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int		parse_asta(int flag, t_printf *p_t)
 
 int		parse_field_width(t_printf *p_t)
 {
-
 	if (*(p_t->f_tmp) == '*')
 		parse_asta(0, p_t);
 	else

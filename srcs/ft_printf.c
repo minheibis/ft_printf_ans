@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:26:41 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/08 14:07:54 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/10 20:45:18 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,11 @@ int		read_format(t_printf *p_t)
 	while (*(p_t->f_tmp) != '\0')
 	{
 		p_t->rv_tmp = 0;
-		while ((p_t->f_tmp)[p_t->rv_tmp] != '%' && (p_t->f_tmp)[p_t->rv_tmp] != '\0')
+		while ((p_t->f_tmp)[p_t->rv_tmp] != '%'
+				&& (p_t->f_tmp)[p_t->rv_tmp] != '\0')
 			p_t->rv_tmp++;
 		if (!(p_t->o_tmp = ft_substr(p_t->f_tmp, 0, p_t->rv_tmp)))
-			return(-1);
+			return (-1);
 		if (!(p_t->output = free_join_output(p_t)))
 			return (-1);
 		if ((p_t->f_tmp)[p_t->rv_tmp] == '\0')
