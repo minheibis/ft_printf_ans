@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:32:42 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/11 21:22:53 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/11 21:25:16 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,7 @@ int		set_len_s(int s_len, t_printf *p_t)
 		else
 		{
 			if (p_t->precision > p_t->field)
-			{
-				if (p_t->precision > s_len)
-					len = s_len;
-				else
-					len = p_t->precision;
-			}
+				len = (p_t->precision > s_len ? s_len : p_t->precision);
 			else
 				len = p_t->field;
 		}
