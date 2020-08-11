@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:32:42 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/11 21:25:16 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/11 21:31:17 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,13 @@ int		set_s(char *s, t_printf *p_t)
 	int		len;
 	int		s_len;
 	char	c;
+	int		null_flag;
 
+	null_flag = 0;
 	if (s == NULL)
 	{
 		s = &c;
+		null_flag = 1;
 		if (!(s = ft_strdup("(null)")))
 			return (-1);
 	}
@@ -31,6 +34,8 @@ int		set_s(char *s, t_printf *p_t)
 	p_t->o_tmp[len] = '\0';
 	set_s_inside(s, s_len, len, p_t);
 	p_t->rv_tmp = len;
+	if (null_flag == 1)
+		free(s);
 	return (0);
 }
 
