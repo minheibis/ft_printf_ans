@@ -9,6 +9,7 @@ main.c
 *.o
 srcs/*.o
 *.dSYMs
+*.dSYM
 *.so
 
 # this time only
