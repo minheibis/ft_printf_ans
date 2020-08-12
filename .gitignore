@@ -10,6 +10,7 @@ main.c
 srcs/*.o
 *.dSYMs
 *.dSYM
+a.out.dSYM
 *.so
 
 # this time only
