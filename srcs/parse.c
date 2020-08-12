@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:26:57 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/10 20:54:11 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/12 18:37:39 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,13 @@ int		parse_asta(int flag, t_printf *p_t)
 	else
 	{
 		if (flag == 0)
+		{
 			p_t->field = -tmp;
+			p_t->flag_align_left = 1;
+			p_t->flag_zero = -1;
+		}
 		else
 			p_t->precision = -1;
-		p_t->flag_align_left = 1;
 	}
 	p_t->f_tmp++;
 	return (0);

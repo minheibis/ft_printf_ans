@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 15:51:17 by hyuki             #+#    #+#             */
-/*   Updated: 2020/07/02 18:41:54 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/11 22:14:38 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *str)
 	size_t i;
 
 	i = 0;
+	if (str == NULL)
+		return (i);
 	while (str[i])
 		i++;
 	return (i);
