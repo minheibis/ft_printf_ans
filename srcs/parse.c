@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:26:57 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/12 18:37:39 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/15 10:03:22 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,12 @@ int		parse_precision(t_printf *p_t)
 
 int		parse_conversion(t_printf *p_t)
 {
-	p_t->conversion = *p_t->f_tmp;
-	p_t->f_tmp++;
+	if (*p_t->f_tmp == '\0')
+		p_t->conversion = *p_t->f_tmp;
+	else
+	{
+		p_t->conversion = *p_t->f_tmp;
+		p_t->f_tmp++;
+	}
 	return (0);
 }

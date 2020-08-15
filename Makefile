@@ -15,6 +15,7 @@ SRCS_NAME	= ft_printf.c\
 			  output_p.c \
 			  output_d.c \
 			  output_u.c \
+			  output_others.c
 
 SRCS		= $(addprefix $(SRCS_DIR)/,$(SRCS_NAME))
 OBJS		= $(SRCS:.c=.o)

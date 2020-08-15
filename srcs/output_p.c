@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:43:57 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/11 21:51:48 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/15 11:40:57 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,17 +62,12 @@ int		set_len_p(int p_len, t_printf *p_t)
 int		set_p_inside(char *str_p, int p_len, int len, t_printf *p_t)
 {
 	if (p_t->flag_align_left == 1)
-	{
-		if (p_t->precision < p_len)
-			p_t->precision = p_len;
-		pad_str(0, 2, "0x", p_t);
-		pad_letter(2, (p_t->precision - p_len + 2), '0', p_t);
-		pad_str((p_t->precision - p_len + 2), (p_t->precision + 2), str_p, p_t);
-		pad_letter((p_t->precision + 2), len, ' ', p_t);
-	}
+		set_p_inside_left(str_p, p_len, len, p_t);
 	else
 	{
-		if (p_t->precision < p_len)
+		if (p_t->flag_zero == 1 && p_t->precision == -1)
+			p_t->precision = len - 2;
+		else if (p_t->precision < p_len)
 			p_t->precision = p_len;
 		pad_letter(0, (len - p_t->precision - 2), ' ', p_t);
 		pad_str((len - p_t->precision - 2), (len - p_t->precision), "0x", p_t);
@@ -80,4 +75,15 @@ int		set_p_inside(char *str_p, int p_len, int len, t_printf *p_t)
 		pad_str((len - p_len), len, str_p, p_t);
 	}
 	return (0);
+}
+
+int		set_p_inside_left(char *str_p, int p_len, int len, t_printf *p_t)
+{
+	if (p_t->precision < p_len)
+		p_t->precision = p_len;
+	pad_str(0, 2, "0x", p_t);
+	pad_letter(2, (p_t->precision - p_len + 2), '0', p_t);
+	pad_str((p_t->precision - p_len + 2), (p_t->precision + 2), str_p, p_t);
+	pad_letter((p_t->precision + 2), len, ' ', p_t);
+	return(0);
 }

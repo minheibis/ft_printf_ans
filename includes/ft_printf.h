@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 10:39:50 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/10 23:22:41 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/15 10:03:59 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ int				set_per(t_printf *p_t);
 int				set_p(void *p, t_printf *p_t);
 int				set_len_p(int p_len, t_printf *p_t);
 int				set_p_inside(char *str_p, int p_len, int len, t_printf *p_t);
+int				set_p_inside_left(char *str_p, int p_len, int len, t_printf *p_t);
 /*
 **output_d.c
 */
@@ -111,5 +112,9 @@ int				set_str_u(unsigned int u, char cs,
 		char **p_str_u, t_printf *p_t);
 int				set_len_u(int u_len, t_printf *p_t);
 int				set_u_inside(char *str_u, int u_len, int len, t_printf *p_t);
+/*
+**output_others.c
+*/
+int				set_others(t_printf *p_t);
 
 #endif
