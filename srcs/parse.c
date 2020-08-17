@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:26:57 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/15 10:03:22 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/17 18:29:10 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int		parse_asta(int flag, t_printf *p_t)
 		else
 			p_t->precision = tmp;
 	}
+	else if (tmp == INT_MIN)
+		return (-1);
 	else
 	{
 		if (flag == 0)
@@ -59,7 +61,7 @@ int		parse_asta(int flag, t_printf *p_t)
 int		parse_field_width(t_printf *p_t)
 {
 	if (*(p_t->f_tmp) == '*')
-		parse_asta(0, p_t);
+		return (parse_asta(0, p_t));
 	else
 	{
 		if (ft_isdigit(*(p_t->f_tmp)) != 0)
@@ -69,7 +71,7 @@ int		parse_field_width(t_printf *p_t)
 			p_t->field *= 10;
 			p_t->field += *(p_t->f_tmp) - '0';
 			p_t->f_tmp++;
-			if (p_t->field > INT_MAX || p_t->field < INT_MIN)
+			if ((long)p_t->field > INT_MAX)
 				return (-1);
 		}
 	}
@@ -84,7 +86,7 @@ int		parse_precision(t_printf *p_t)
 		p_t->precision = 0;
 	p_t->f_tmp++;
 	if (*(p_t->f_tmp) == '*')
-		parse_asta(1, p_t);
+		return (parse_asta(1, p_t));
 	else
 	{
 		while (ft_isdigit(*(p_t->f_tmp)) != 0)
@@ -92,7 +94,7 @@ int		parse_precision(t_printf *p_t)
 			p_t->precision *= 10;
 			p_t->precision += *(p_t->f_tmp) - '0';
 			p_t->f_tmp++;
-			if (p_t->precision > INT_MAX || p_t->precision < INT_MIN)
+			if ((long)p_t->precision > INT_MAX)
 				return (-1);
 		}
 	}
