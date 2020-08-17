@@ -6,7 +6,7 @@
 /*   By: hyuki <hyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 07:43:57 by hyuki             #+#    #+#             */
-/*   Updated: 2020/08/15 11:40:57 by hyuki            ###   ########.fr       */
+/*   Updated: 2020/08/17 18:31:22 by hyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,5 @@ int		set_p_inside_left(char *str_p, int p_len, int len, t_printf *p_t)
 	pad_letter(2, (p_t->precision - p_len + 2), '0', p_t);
 	pad_str((p_t->precision - p_len + 2), (p_t->precision + 2), str_p, p_t);
 	pad_letter((p_t->precision + 2), len, ' ', p_t);
-	return(0);
+	return (0);
 }
